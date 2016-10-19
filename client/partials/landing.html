@@ -1,0 +1,20 @@
+<a href="#/new_question">Add a Question</a>
+<div class="col-md-3 navbar-right">
+<input placeholder="Search..." class="form-control" ng-model="search">
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="question in questions | orderBy:'-createdAt' | filter:search">
+            <td>{{question.question}}</td>
+            <td>{{question.answers.length}}</td>
+            <td><a href="#/question/{{question._id}}">Show</a> | <a href="#/question/{{question._id}}/new_answer">Answer</a></td>
+        </tr>
+    </tbody>
+</table>

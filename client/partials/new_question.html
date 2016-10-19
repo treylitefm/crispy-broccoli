@@ -1,0 +1,13 @@
+<h2>New Question</h2>
+<form class="col-md-8">
+    <label>Question: </label>
+    <textarea class="form-control" rows="5" ng-model="question.question" placeholder="Question..."></textarea>
+    <br>
+    <label>Description (optional): </label>
+    <textarea class="form-control" ng-model="question.description" rows="5" placeholder="Description..."></textarea>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="submit()">Submit</button>
+    </div>
+</form>

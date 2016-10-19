@@ -1,0 +1,15 @@
+<a href="#/question/{{question._id}}">Go Back to Question</a>
+<h2>{{question.question}}</h2>
+<h4>{{question.description}}</h4>
+<form class="col-md-8">
+    <label>Your Answer: </label>
+    <textarea class="form-control" rows="5" ng-model="answer.answer" placeholder="Answer..."></textarea>
+    <br>
+    <label>Supporting Details (optional): </label>
+    <textarea class="form-control" ng-model="answer.description" rows="5" placeholder="Details..."></textarea>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="submit()">Submit</button>
+    </div>
+</form>
