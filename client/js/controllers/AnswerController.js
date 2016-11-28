@@ -3,7 +3,7 @@
         $scope.user = {}
         $scope.question = {}
         $scope.answer = {}
-        $scope.errors = []
+        $scope.errors = ''
 
         function getUser() {
             UserFactory.getUser(function(data) {
@@ -28,7 +28,8 @@
             $scope.answer.user = $scope.user._id
             QuestionFactory.createAnswer($routeParams.id, $scope.answer, function(data) {
                 if (data.errors) {
-                    $scope.errors = data.errors
+                    //$scope.errors = data.errors
+                    $scope.errors = 'Invalid Answer'
                 } else {
                     $location.url('/')
                 }

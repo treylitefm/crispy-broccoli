@@ -2,7 +2,7 @@
     angular.module('app').controller('QuestionController', ['$scope', 'UserFactory', 'QuestionFactory', '$location', function($scope, UserFactory, QuestionFactory, $location) {
         $scope.user = {}
         $scope.question = {}
-        $scope.errors = []
+        $scope.errors = ''
 
         function getUser() {
             UserFactory.getUser(function(data) {
@@ -21,7 +21,8 @@
             $scope.question.user = $scope.user._id
             QuestionFactory.createQuestion($scope.question, function(data) {
                 if (data.errors) {
-                    $scope.errors = data.errors
+                    //$scope.errors = data.errors
+                    $scope.errors = 'Invalid Question'
                 } else {
                     $location.url('/')
                 }
